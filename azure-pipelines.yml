@@ -10,6 +10,10 @@ stages:
   - job: Build
     displayName: Build
     pool: demo
+    strategy:
+     matrix:
+       Python37:
+         python.version: '3.7'
     steps:
     - bash: |
           echo "hi"
