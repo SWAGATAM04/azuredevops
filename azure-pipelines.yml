@@ -17,7 +17,8 @@ stages:
           echo "Checking Default python version"
           python --version
           echo "Setting python3"
-          set PYTHONPATH=/usr/bin/python3
+          echo $(PYTHONPATH)
+          set $(PYTHONPATH)
           python --version
           
 
