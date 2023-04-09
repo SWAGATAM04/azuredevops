@@ -13,17 +13,11 @@ stages:
     pool: demo
    
     steps:
-    - task: Bash@3
-      inputs:
-        filePath: '/usr/bin/python3'
-        bashEnvValue: '/usr/bin/python3'
-    
-    - script: |
-          echo "hi"
-          id
-          echo "Checking Default python version"
-          python --version
-          echo $(PYTHONPATH)
+    - bash: |
+            echo "alias python=/usr/bin/python3" > BASH_ENV
+            
+            source "BASH_ENV"
+            python --version
 
             
         
