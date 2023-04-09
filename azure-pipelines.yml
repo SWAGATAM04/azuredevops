@@ -18,6 +18,7 @@ stages:
             
             source "BASH_ENV"
             python --version
+            python3 --version
 
             
         
