@@ -1,0 +1,18 @@
+trigger:
+- main
+
+
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:  
+  - job: Build
+    displayName: Build
+    pool: demo
+    steps:
+    - bash: |
+      echo "Checking Ansible Version"
+      ansible --version
+      python --version
+      
