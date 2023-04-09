@@ -19,6 +19,8 @@ stages:
           echo "Setting python3"
           echo $(PYTHONPATH)
           set $(PYTHONPATH)
+          alias python=$(PYTHONPATH)
+          sleep 1
           python --version
           
 
