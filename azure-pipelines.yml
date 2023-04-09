@@ -19,10 +19,12 @@ stages:
           echo "Checking Default python version"
           python --version
           echo "Setting python3"
-          echo $(PYTHONPATH)
-          set $(PYTHONPATH)
-          alias python=$(PYTHONPATH)
-          sleep 1
+          echo "alias python='/usr/bin/python3'" > script.sh
+          echo "alias python3='/usr/bin/python3'" >> script.sh
+          sudo chmod +x script.sh
+          bash script.sh
+         
+         
           python --version
    
             
