@@ -12,7 +12,6 @@ stages:
     pool: demo
     steps:
     - bash: |
-      echo "Checking Ansible Version"
-      ansible --version
-      python --version
+          echo "hi"
+
       
