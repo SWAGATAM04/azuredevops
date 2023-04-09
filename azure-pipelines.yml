@@ -11,25 +11,20 @@ stages:
   - job: Build
     displayName: Build
     pool: demo
-    strategy:
-      matrix:
-        Python37: 
-          python.version: '3.7'
+   
     steps:
-    - task:  UsePythonVersion@0
+    - task: Bash@3
       inputs:
-        versionSpec: '$(python.version)'
+        filePath: '/usr/bin/python3'
+        bashEnvValue: '/usr/bin/python3'
+    
     - script: |
           echo "hi"
           id
           echo "Checking Default python version"
           python --version
-          echo "Setting python3"
-          alias python='/usr/bin/python3'
-          alias python3='/usr/bin/python3'
-                
-          python --version
-   
+          echo $(PYTHONPATH)
+
             
         
           
