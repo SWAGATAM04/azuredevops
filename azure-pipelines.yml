@@ -1,7 +1,5 @@
 trigger:
-- task: UsePythonVersion@0
-  inputs:
-    
+   
 - main
 
 
