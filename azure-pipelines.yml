@@ -11,20 +11,23 @@ stages:
   - job: Build
     displayName: Build
     pool: demo
+    strategy:
+      matrix:
+        Python37: 
+          python.version: '3.7'
     steps:
-    
-     - bash: |
+    - task:  UsePythonVersion@0
+      inputs:
+        versionSpec: '$(python.version)'
+    - script: |
           echo "hi"
           id
           echo "Checking Default python version"
           python --version
           echo "Setting python3"
-          echo "alias python='/usr/bin/python3'" > script.sh
-          echo "alias python3='/usr/bin/python3'" >> script.sh
-          sudo chmod +x script.sh
-          bash script.sh
-         
-         
+          alias python='/usr/bin/python3'
+          alias python3='/usr/bin/python3'
+                
           python --version
    
             
