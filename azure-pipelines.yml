@@ -10,10 +10,6 @@ stages:
   - job: Build
     displayName: Build
     pool: demo
-    strategy:
-     matrix:
-       Python37:
-         python.version: '3.7'
     steps:
     - bash: |
           echo "hi"
@@ -21,15 +17,8 @@ stages:
           echo "Checking Default python version"
           python --version
 
-          echo "Checking python version"
-          alias python='/usr/bin/python3'
-          alias python3='/usr/bin/python3'
+          
 
-          python --version
-          echo "Setting it on root"
-          sudo alias python=/usr/bin/python3
-          sudo alias python3='/usr/bin/python3'
-
-          python --version
+         
 
       
