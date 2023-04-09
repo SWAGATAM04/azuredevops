@@ -13,5 +13,13 @@ stages:
     steps:
     - bash: |
           echo "hi"
+          id
+          echo "Checking Default python version"
+          python --version
+
+          echo "Checking python version"
+          alias python='/usr/bin/python3'
+          alias python3='/usr/bin/python3'
+          python --version
 
       
