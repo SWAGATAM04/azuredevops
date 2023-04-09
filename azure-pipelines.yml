@@ -14,9 +14,9 @@ stages:
    
     steps:
     - task: UsePythonVersion@0
-      displayName: 'Use Python 3.7.16'
+      displayName: 'Use Python 3.8'
       inputs:
-       versionSpec: 3.7.16
+       versionSpec: 3.8
        githubToken: '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'
        addToPath: true
        architecture: 'x64'
