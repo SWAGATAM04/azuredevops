@@ -13,12 +13,19 @@ stages:
     pool: demo
    
     steps:
+    - task: UsePythonVersion@0
+      displayName: 'Use Python 3.7.16'
+      inputs:
+       versionSpec: 3.7.16
+       githubToken: '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'
+       addToPath: true
+       architecture: 'x64'
     - bash: |
             echo "alias python=/usr/bin/python3" > BASH_ENV
             
             source "BASH_ENV"
             python --version
-            python3 --version
+           
 
             
         
