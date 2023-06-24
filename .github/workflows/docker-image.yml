@@ -10,9 +10,10 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: runner2
 
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
+      run: mvn clean package wildfly:deploy
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
